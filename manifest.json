@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Classic Watch Layout",
+  "version": "1.2.0",
+  "description": "Puts the description and comments back under the video, recommended videos back in the right sidebar, and lets you resize their thumbnails.",
+  "permissions": ["storage", "activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["thumbnail-size.js", "layout.js"],
+      "css": ["styles.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "YouTube classic layout settings"
+  }
+}

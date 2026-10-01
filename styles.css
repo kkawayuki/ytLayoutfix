@@ -1,0 +1,39 @@
+/* Two columns: video + details on the left, recommendations on the right. */
+ytd-watch-flexy.ycl-active #secondary {
+  display: block !important;
+  width: 402px !important;
+  min-width: 300px !important;
+}
+
+ytd-watch-flexy.ycl-active #related {
+  display: block !important;
+}
+
+/* New-layout leftovers, in case YouTube styles them without the attributes:
+   the spacer that pushes the sidebar below the player, and the
+   Description / Comments button rail on the far right. */
+ytd-watch-flexy.ycl-active #secondary-split-scroll-spacer,
+ytd-watch-flexy.ycl-active #fixed-side-menu {
+  display: none !important;
+}
+
+/* Recommendations: single vertical list, even if YouTube rendered them as a grid. */
+ytd-watch-flexy.ycl-active #secondary ytd-rich-grid-renderer #contents,
+ytd-watch-flexy.ycl-active #secondary #items {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+ytd-watch-flexy.ycl-active #secondary ytd-rich-item-renderer {
+  width: 100% !important;
+  margin: 0 0 8px !important;
+}
+
+/* YouTube's inline description and comments are back under the video, so the
+   side-panel versions it still opens in the sidebar would just be duplicates. */
+ytd-watch-flexy.ycl-active ytd-engagement-panel-section-list-renderer:is(
+  [target-id="engagement-panel-comments-section"],
+  [target-id="engagement-panel-structured-description"]
+) {
+  display: none !important;
+}
