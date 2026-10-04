@@ -36,3 +36,8 @@ enabled.addEventListener('change', async () => {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   if (tab?.url?.startsWith('https://www.youtube.com/')) chrome.tabs.reload(tab.id);
 });
+
+// Applies live in open YouTube tabs, no reload needed.
+const hideShorts = document.getElementById('hideShorts');
+chrome.storage.local.get({ hideShorts: true }, ({ hideShorts: on }) => (hideShorts.checked = on));
+hideShorts.addEventListener('change', () => chrome.storage.local.set({ hideShorts: hideShorts.checked }));

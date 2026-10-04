@@ -37,3 +37,10 @@ ytd-watch-flexy.ycl-active ytd-engagement-panel-section-list-renderer:is(
 ) {
   display: none !important;
 }
+
+/* "Hide Shorts" switch: drop any sidebar item (a Shorts shelf or a single
+   Shorts tile) that links to a Short. Regular videos link to /watch. */
+html.ycl-hide-shorts #secondary ytd-reel-shelf-renderer,
+html.ycl-hide-shorts #secondary #contents > *:has(a[href*="/shorts/"]) {
+  display: none !important;
+}
