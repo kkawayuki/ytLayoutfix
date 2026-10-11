@@ -32,7 +32,7 @@ YouTube's newer watch page moves comments and the description into a side panel 
 
 Options (click the extension icon):
 • Classic layout: turn the whole layout change on or off. The current YouTube tab reloads to apply it.
-• Hide Shorts in sidebar: remove Shorts from the recommendations column. Applies instantly.
+• Hide Shorts in sidebar: remove Shorts from the recommendations column. The current YouTube tab reloads to apply it.
 • Thumbnail size: adjust the size of recommended-video thumbnails with a slider.
 
 Privacy: the extension collects no data. It only changes how youtube.com looks in your browser, and your settings are stored locally in Chrome.
@@ -65,7 +65,7 @@ Saves the user's settings (layout on/off, hide Shorts on/off, thumbnail size) lo
 
 activeTab:
 ```
-When the user turns the layout on or off from the popup, the extension reloads the current tab if it is a YouTube page so the change takes effect.
+When the user turns the layout or the Hide Shorts option on or off from the popup, the extension reloads the current tab if it is a YouTube page so the change takes effect.
 ```
 
 Host permission (content scripts on https://www.youtube.com/*):

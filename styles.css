@@ -17,14 +17,17 @@ ytd-watch-flexy.ycl-active #fixed-side-menu {
   display: none !important;
 }
 
-/* Recommendations: single vertical list, even if YouTube rendered them as a grid. */
-ytd-watch-flexy.ycl-active #secondary ytd-rich-grid-renderer #contents,
-ytd-watch-flexy.ycl-active #secondary #items {
+/* Recommendations: single vertical list, even if YouTube rendered them as a grid.
+   Only the top-level list: shelves inside it (e.g. the Shorts carousel) have
+   their own #contents / #items and size themselves from their width, so
+   restyling those makes them re-layout forever. */
+ytd-watch-flexy.ycl-active #secondary ytd-rich-grid-renderer > #contents,
+ytd-watch-flexy.ycl-active #secondary ytd-watch-next-secondary-results-renderer > #items {
   display: flex !important;
   flex-direction: column !important;
 }
 
-ytd-watch-flexy.ycl-active #secondary ytd-rich-item-renderer {
+ytd-watch-flexy.ycl-active #secondary ytd-rich-grid-renderer > #contents > ytd-rich-item-renderer {
   width: 100% !important;
   margin: 0 0 8px !important;
 }
