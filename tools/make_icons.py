@@ -1,12 +1,5 @@
 #!/usr/bin/env python3
-"""Draws the extension icons (icons/icon{16,32,48,128}.png) with no dependencies.
 
-The icon is a sketch of the classic watch layout: a video with text lines under
-it and a column of recommendations on the right. Shapes are defined on a
-128x128 grid, rendered with 4x4 supersampling, and written as RGBA PNGs.
-
-Run from anywhere: python3 tools/make_icons.py
-"""
 import struct
 import zlib
 from pathlib import Path
